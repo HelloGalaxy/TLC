@@ -41,4 +41,10 @@
 		<nature>com.google.appengine.eclipse.core.gaeNature</nature>
 		<nature>org.eclipse.wst.common.project.facet.core.nature</nature>
 	</natures>
+	<variableList>
+		<variable>
+			<name>JAVA_HOME</name>
+			<value>file:/C:/Program%20Files%20(x86)/Java/jdk1.7.0_40</value>
+		</variable>
+	</variableList>
 </projectDescription>

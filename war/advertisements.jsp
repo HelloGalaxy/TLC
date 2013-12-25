@@ -2,7 +2,7 @@
 <%@page import="fr.istic.tlc.model.Advertisement"%>
 <%@page import="java.util.List;"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1" errorPage="servicefail.jsp" %>
 	
 <jsp:useBean id="aditem" class="fr.istic.tlc.model.Advertisement" scope="page"/>
 <jsp:setProperty name="aditem" property="*"/> 
@@ -15,10 +15,8 @@
 	if(request.getParameter("delete") != null) {
 		String mark = request.getParameter("delete");		
 		if(mark.equals("on") && session.getAttribute("KEYWORDS") != null) {
-			out.print((String)session.getAttribute("KEYWORDS"));
 			ds.deleteAds((String)session.getAttribute("KEYWORDS"));
 		}
-		
 	}
 	
 	

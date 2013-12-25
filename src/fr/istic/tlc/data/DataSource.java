@@ -16,11 +16,11 @@ public class DataSource {
 		DATA.add(new Advertisement("Wii", 199.00, "2013-11-13"));
 	}
 
-	public List<Advertisement> getAllAds() {
+	public synchronized List<Advertisement> getAllAds() {
 		return DATA;
 	}
 
-	public List<Advertisement> getAdByTitle(String key) {
+	public synchronized List<Advertisement> getAdByTitle(String key) {
 
 		List<Advertisement> ds = new LinkedList<Advertisement>();
 
@@ -33,13 +33,13 @@ public class DataSource {
 		return ds;
 	}
 
-	public void addAD(Advertisement ad) {
+	public synchronized void addAD(Advertisement ad) {
 		if (ad != null) {
 			DATA.add(ad);
 		}
 	}
 
-	public void deleteAds(String key) {
+	public synchronized void deleteAds(String key) {
 		if (!key.equals("")) {
 			for (int i = 0; i< DATA.size(); i++) {
 				if (DATA.get(i).getTitle().contains(key)) {
